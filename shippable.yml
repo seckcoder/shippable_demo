@@ -10,8 +10,8 @@ services:
   - selenium
 
 before_script:
-  - "export DISPLAY=:99.0"
   - pip install -r requirements.txt
+  - "export DISPLAY=:99.0"
   - "/etc/init.d/xvfb start"
 
 script:
