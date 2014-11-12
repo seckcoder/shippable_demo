@@ -11,4 +11,11 @@ services:
 
 before_script:
   - "export DISPLAY=:99.0"
+  - pip install -r requirements.txt
   - "/etc/init.d/xvfb start"
+
+script:
+  - python -m unittest discover -s ui_tests -p 'Test*.py'
+
+after_script:
+  - /etc/init.d/xvfb stop
